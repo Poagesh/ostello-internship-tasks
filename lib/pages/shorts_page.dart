@@ -21,7 +21,7 @@ class ShortsPage extends StatefulWidget {
 
 class _ShortsPageState extends State<ShortsPage> {
   late VideoPlayerController _controller;
-  bool isInterested = false; 
+  bool isInterested = false;
 
   @override
   void initState() {
@@ -38,13 +38,14 @@ class _ShortsPageState extends State<ShortsPage> {
 
   @override
   void dispose() {
-    _controller.dispose(); 
+    _controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
           // Video Player
@@ -68,13 +69,48 @@ class _ShortsPageState extends State<ShortsPage> {
 
           // Back button
           Positioned(
-            top: MediaQuery.of(context).padding.top + 10, // Adjust for the status bar
+            top: MediaQuery.of(context).padding.top +
+                10, // Adjust for the status bar
             left: 10,
             child: IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () {
                 Navigator.pop(context);
               },
+            ),
+          ),
+
+          // Like, Comment, Share icons positioned vertically on the right
+          Positioned(
+            right: 10,
+            bottom: 120, 
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.thumb_up, color: Colors.white),
+                  onPressed: () {
+                    // Handle like button
+                  },
+                ),
+                const Text('Like', style: TextStyle(color: Colors.white)),
+                const SizedBox(height: 20),
+                IconButton(
+                  icon: const Icon(Icons.comment, color: Colors.white),
+                  onPressed: () {
+                    // Handle comment button
+                  },
+                ),
+                const Text('Comment', style: TextStyle(color: Colors.white)),
+                const SizedBox(height: 20),
+                IconButton(
+                  icon: const Icon(Icons.share, color: Colors.white),
+                  onPressed: () {
+                    // Handle share button
+                  },
+                ),
+                const Text('Share', style: TextStyle(color: Colors.white)),
+              ],
             ),
           ),
 
@@ -119,30 +155,6 @@ class _ShortsPageState extends State<ShortsPage> {
                     style: const TextStyle(color: Colors.white),
                   ),
                   const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        children: const [
-                          Icon(Icons.thumb_up, color: Colors.white),
-                          Text('Like', style: TextStyle(color: Colors.white)),
-                        ],
-                      ),
-                      Column(
-                        children: const [
-                          Icon(Icons.comment, color: Colors.white),
-                          Text('Comment', style: TextStyle(color: Colors.white)),
-                        ],
-                      ),
-                      Column(
-                        children: const [
-                          Icon(Icons.share, color: Colors.white),
-                          Text('Share', style: TextStyle(color: Colors.white)),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
                   // Interested and Not Interested Buttons
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -155,9 +167,11 @@ class _ShortsPageState extends State<ShortsPage> {
                           });
                         },
                         style: TextButton.styleFrom(
-                          backgroundColor: isInterested ? Colors.green : Colors.transparent,
+                          backgroundColor:
+                              isInterested ? Colors.green : Colors.transparent,
                           side: BorderSide(color: Colors.white),
-                          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 12, horizontal: 24),
                         ),
                         child: const Text(
                           'Interested',
@@ -173,7 +187,8 @@ class _ShortsPageState extends State<ShortsPage> {
                           });
                         },
                         style: TextButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 12, horizontal: 24),
                         ),
                         child: const Text(
                           'Not Interested',

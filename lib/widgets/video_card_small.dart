@@ -58,7 +58,7 @@ class VideoCardSmall extends StatelessWidget {
                       ),
                       SizedBox(width: 8),
                       Text(
-                        'Institute Name',
+                        'Institution',
                         style: TextStyle(color: Colors.grey[600]),
                         overflow: TextOverflow.ellipsis,
                       ),

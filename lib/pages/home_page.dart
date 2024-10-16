@@ -75,8 +75,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             TextButton(onPressed: () {}, child: const Text('12th IIT JEE >')),
-            const SizedBox(width: 4),
-            const Icon(Icons.chevron_right, color: Colors.white),
+            
           ],
         ),
         actions: [
@@ -175,7 +174,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(height: 10),
               Row(
                 children: [
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 5),
                   CategoryContainer(
                     imagePath: 'assets/category1.png',
                     buttonText: 'Career Trend',
@@ -183,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                       // Handle button press
                     },
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 5),
                   CategoryContainer(
                     imagePath: 'assets/category2.png',
                     buttonText: 'Assessment',
@@ -191,7 +190,7 @@ class _HomePageState extends State<HomePage> {
                       // Handle button press
                     },
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 5),
                   CategoryContainer(
                     imagePath: 'assets/category3.png',
                     buttonText: 'Popular Skills',

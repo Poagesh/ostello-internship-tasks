@@ -22,7 +22,7 @@ class CategoryContainer extends StatelessWidget {
         ),
         elevation: 4, // Add shadow effect
         child: Container(
-          width: 100,
+          width: 95,
           height: 100,
           decoration: BoxDecoration(
             color: Colors.white, // Background color
